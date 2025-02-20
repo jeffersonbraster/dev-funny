@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤔 Devo Codar Hoje?
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38B2AC)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-First, run the development server:
+Um website divertido inspirado no "Should I Deploy Today" para ajudar desenvolvedores a decidirem se devem codar hoje, com mensagens bem-humoradas e Easter eggs!
 
+[Demo](#) · [Reportar Bug](#) · [Sugerir Feature](#)
+
+![Screenshot do Projeto](/screenshot.png)
+
+
+## ✨ Funcionalidades
+
+- 🎨 Design responsivo e minimalista
+- 🔄 Mensagens dinâmicas e bem-humoradas
+- 🎉 Easter eggs em datas especiais
+- 🌗 Animações suaves e transições elegantes
+- 📤 Compartilhamento nativo com fallback
+- 📊 Analytics integrado
+- ⌨️ Suporte completo a navegação por teclado
+
+## 🚀 Tecnologias
+
+- [Next.js 15](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Vercel Analytics](https://vercel.com/analytics)
+
+## 📦 Instalação
+
+1. Clone o repositório
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/seu-usuario/devo-codar-hoje.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependências
+```bash
+cd devo-codar-hoje
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Execute o servidor de desenvolvimento
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador
 
-## Learn More
+## 🔧 Configuração
 
-To learn more about Next.js, take a look at the following resources:
+### Variáveis de Ambiente
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Crie um arquivo `.env.local` na raiz do projeto:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+NEXT_PUBLIC_VERCEL_ANALYTICS_ID=seu-id-aqui
+```
 
-## Deploy on Vercel
+### PWA
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Os ícones do PWA estão localizados em `/public`. Para personalizar:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Substitua os arquivos:
+   - `icon-192x192.png`
+   - `icon-512x512.png`
+2. Atualize o `manifest.ts` conforme necessário
+
+## 📝 Personalização
+
+### Adicionando Novas Mensagens
+
+Edite o arquivo `src/data/messages.ts`:
+
+```typescript
+export const messages: Message[] = [
+  {
+    text: "Sua mensagem aqui!",
+    type: "positive",
+    emoji: "🚀",
+    backgroundColor: "#4ade80",
+    textColor: "#022c22"
+  },
+  // ...
+];
+```
+
+### Easter Eggs
+
+Configure datas especiais em `src/utils/dateHelpers.ts`:
+
+```typescript
+// Adicione suas datas especiais
+if (month === 9 && date === 31) { // Halloween
+  return {
+    isSpecial: true,
+    specialMessage: {
+      // ...
+    }
+  };
+}
+```
+
+## 📱 PWA
+
+O projeto está configurado como PWA e pode ser instalado como um aplicativo nativo. Para testar:
+
+1. Faça build do projeto
+```bash
+npm run build
+```
+
+2. Inicie o servidor de produção
+```bash
+npm start
+```
+
+3. Abra em um dispositivo móvel ou Chrome Desktop
+
+## 🤝 Contribuindo
+
+Contribuições são sempre bem-vindas!
+
+1. Fork o projeto
+2. Crie sua Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas alterações (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a Branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+
+## 👥 Autores
+
+- Seu Nome - [@seu-usuario](https://github.com/seu-usuario)
+
+## 🙏 Agradecimentos
+
+- Inspirado no [Should I Deploy Today](https://shouldideploy.today/)
+- [Framer Motion](https://www.framer.com/motion/) pelas animações incríveis
+- [Vercel](https://vercel.com) pelo hosting e analytics
+- [TailwindCSS](https://tailwindcss.com) pelo sistema de design
