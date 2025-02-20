@@ -51,5 +51,50 @@ export const isSpecialDate = (): { isSpecial: boolean; specialMessage?: Message 
     };
   }
 
+   // Final do mês
+   if (date >= 28) {
+    return {
+      isSpecial: true,
+      specialMessage: {
+        text: "FINAL DO MÊS! Hora de fechar aquelas 300 tasks atrasadas!",
+        type: "warning",
+        emoji: "⏰",
+        backgroundColor: "#fbbf24",
+        textColor: "#452a0a",
+        shareText: "Final do mês, prazo apertado! ⏰ #DevLife"
+      }
+    };
+  }
+
+  // Segunda-feira
+  if (day === 1) {
+    return {
+      isSpecial: true,
+      specialMessage: {
+        text: "É SEGUNDA! Café reforçado e commits organizados!",
+        type: "positive",
+        emoji: "☕",
+        backgroundColor: "#4ade80",
+        textColor: "#022c22",
+        shareText: "Segunda-feira é dia de codar! ☕ #DevLife"
+      }
+    };
+  }
+
+  // Sexta-feira
+  if (day === 5) {
+    return {
+      isSpecial: true,
+      specialMessage: {
+        text: "CUIDADO! Sexta-feira e querendo deployar?",
+        type: "warning",
+        emoji: "🔥",
+        backgroundColor: "#fbbf24",
+        textColor: "#452a0a",
+        shareText: "É sexta-feira! Hoje não é dia de deploy! 🔥 #DevLife"
+      }
+    };
+  }
+
   return { isSpecial: false };
 };

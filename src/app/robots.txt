@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Host: https://dev-funny.jeffersonbrandao.com.br
+Sitemap: https://dev-funny.jeffersonbrandao.com.br/sitemap.xml

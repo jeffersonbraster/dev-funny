@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
+import { Rowdies } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const rowdies = Rowdies({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'], // Defina os pesos desejados
+  variable: '--font-rowdies', // Nome para ser utilizado no CSS
 });
 
 export const metadata: Metadata = {
-  title: "Devo codar hoje?",
+  metadataBase: new URL("https://dev-funny.jeffersonbrandao.com.br/"),
+  title: "DevFunny | Devo codar hoje?",
   description: "O que o destino reserva para você hoje meu caro dev?",
+  authors: {
+    name: "Jefferson Brandão",
+    url: new URL("https://dev-funny.jeffersonbrandao.com.br/"),
+  },
+  robots: "/robots.txt",
 };
 
 export default function RootLayout({
@@ -25,9 +28,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${rowdies.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

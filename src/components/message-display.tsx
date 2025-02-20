@@ -46,6 +46,17 @@ const MessageDisplay: React.FC<MessageDisplayProps> = ({ message, onRefresh }) =
             transition={{ duration: 0.4, ease: 'easeInOut' }}
             className="text-center px-4 max-w-4xl mx-auto"
           >
+            {/* Título Principal */}
+            <motion.h1
+              className="text-2xl sm:text-3xl font-bold mb-4 opacity-80"
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 0.8 }}
+              transition={{ duration: 0.4 }}
+            >
+              Devo codar hoje?
+            </motion.h1>
+
+            {/* Emoji */}
             <div className="text-7xl sm:text-8xl mb-8 transition-transform duration-1000 ease-in-out hover:scale-110">
               <motion.div
                 animate={{ 
@@ -61,17 +72,19 @@ const MessageDisplay: React.FC<MessageDisplayProps> = ({ message, onRefresh }) =
               </motion.div>
             </div>
             
-            <motion.h1
-              className="text-3xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight"
+            {/* Mensagem Principal */}
+            <motion.h2
+              className="text-3xl sm:text-5xl md:text-6xl font-bold mb-12 leading-tight"
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
               {message.text}
-            </motion.h1>
+            </motion.h2>
 
+            {/* Instruções */}
             <motion.div
-              className="text-lg sm:text-xl opacity-75 mt-8"
+              className="text-lg sm:text-xl opacity-75"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
