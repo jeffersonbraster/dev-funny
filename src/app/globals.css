@@ -7,3 +7,9 @@
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 }
+
+@layer utilities {
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+  }
+}

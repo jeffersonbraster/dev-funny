@@ -104,43 +104,8 @@ if (month === 9 && date === 31) { // Halloween
 }
 ```
 
-## 📱 PWA
-
-O projeto está configurado como PWA e pode ser instalado como um aplicativo nativo. Para testar:
-
-1. Faça build do projeto
-```bash
-npm run build
-```
-
-2. Inicie o servidor de produção
-```bash
-npm start
-```
-
 3. Abra em um dispositivo móvel ou Chrome Desktop
-
-## 🤝 Contribuindo
-
-Contribuições são sempre bem-vindas!
-
-1. Fork o projeto
-2. Crie sua Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit suas alterações (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a Branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
 
 ## 📄 Licença
 
 Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
-
-## 👥 Autores
-
-- Seu Nome - [@seu-usuario](https://github.com/seu-usuario)
-
-## 🙏 Agradecimentos
-
-- Inspirado no [Should I Deploy Today](https://shouldideploy.today/)
-- [Framer Motion](https://www.framer.com/motion/) pelas animações incríveis
-- [Vercel](https://vercel.com) pelo hosting e analytics
-- [TailwindCSS](https://tailwindcss.com) pelo sistema de design
