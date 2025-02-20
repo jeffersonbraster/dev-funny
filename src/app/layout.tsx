@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: new URL("https://dev-funny.jeffersonbrandao.com.br"),
     images: [
       {
-        url: "https://dev-funny.jeffersonbrandao.com.br/devfunny-image.png",
+        url: "https://dev-funny.jeffersonbrandao.com.br/graph-image.png",
         type: "image/jpeg",
         width: 1200,
         height: 630,
