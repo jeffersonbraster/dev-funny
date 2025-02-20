@@ -21,7 +21,7 @@ export const useMessage = () => {
     }
 
     // Corrigindo o problema de tipagem usando o índice para acessar a mensagem
-    setCurrentMessage(() => messages[newIndex]);
+    setCurrentMessage(messages[newIndex] as Message);
   }, [messageHistory]);
 
   useEffect(() => {
