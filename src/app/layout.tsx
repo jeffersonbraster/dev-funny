@@ -17,6 +17,21 @@ export const metadata: Metadata = {
     name: "Jefferson Brandão",
     url: new URL("https://dev-funny.jeffersonbrandao.com.br/"),
   },
+  openGraph: {
+    type: "website",
+    title: "DevFunny | Devo codar hoje?",
+    description: "O que o destino reserva para você hoje meu caro dev?",
+    url: new URL("https://dev-funny.jeffersonbrandao.com.br"),
+    images: [
+      {
+        url: "https://dev-funny.jeffersonbrandao.com.br/devfunny-image.png",
+        type: "image/jpeg",
+        width: 1200,
+        height: 630,
+        alt: "DevFunny",
+      }
+    ]
+  },
   robots: "/robots.txt",
 };
 
