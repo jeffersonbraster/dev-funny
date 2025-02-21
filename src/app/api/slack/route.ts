@@ -3,22 +3,27 @@ import { NextRequest, NextResponse } from 'next/server';
 import { messages } from '@/data/messages';
 import { isSpecialDate } from '@/utils/dateHelpers';
 
-// Desabilita completamente o cache para esta rota
 export const fetchCache = 'force-no-store';
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
-    // Adiciona um timestamp para garantir que a resposta seja única
-    const timestamp = Date.now();
-    
     const searchParams = request.nextUrl.searchParams;
     const tz = searchParams.get('tz') || 'UTC';
     
+    // Pegar todas as mensagens disponíveis
+    const availableMessages = [...messages];
+    
+    // Verificar se há mensagem especial e adicionar ao pool
     const { isSpecial, specialMessage } = isSpecialDate();
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    const message = (isSpecial ? specialMessage : randomMessage)!;
+    if (isSpecial && specialMessage) {
+      availableMessages.push(specialMessage);
+    }
+
+    // Sortear uma mensagem do pool completo
+    const randomIndex = Math.floor(Math.random() * availableMessages.length);
+    const message = availableMessages[randomIndex];
 
     const colors = {
       positive: '#4ade80',
@@ -36,16 +41,15 @@ export async function GET(request: NextRequest) {
       response_type: 'in_channel',
       attachments: [
         {
-          text: message!.text,
+          text: message.text,
           color: colors[message.type as 'positive' | 'negative' | 'warning'],
-          thumb_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/og?ts=${timestamp}`,
+          thumb_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/og?ts=${Date.now()}`,
           footer_icon: `${process.env.NEXT_PUBLIC_BASE_URL}${footerIcons[message.type as 'positive' | 'negative' | 'warning']}`,
           footer: `Devo Codar Hoje? | ${tz}`
         }
       ]
     };
 
-    // Headers para prevenir cache
     return NextResponse.json(response, {
       status: 200,
       headers: {
