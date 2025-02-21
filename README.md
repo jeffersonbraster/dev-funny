@@ -1,16 +1,6 @@
 # 🤔 Devo Codar Hoje?
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38B2AC)
-![License](https://img.shields.io/badge/license-MIT-green)
-
 Um website divertido inspirado no "Should I Deploy Today" para ajudar desenvolvedores a decidirem se devem codar hoje, com mensagens bem-humoradas e Easter eggs!
-
-[Demo](#) · [Reportar Bug](#) · [Sugerir Feature](#)
-
-![Screenshot do Projeto](/screenshot.png)
-
 
 ## ✨ Funcionalidades
 
@@ -34,12 +24,12 @@ Um website divertido inspirado no "Should I Deploy Today" para ajudar desenvolve
 
 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/devo-codar-hoje.git
+git clone https://github.com/jeffersonbraster/dev-funny
 ```
 
 2. Instale as dependências
 ```bash
-cd devo-codar-hoje
+cd dev-funny
 npm install
 ```
 
@@ -57,17 +47,8 @@ npm run dev
 Crie um arquivo `.env.local` na raiz do projeto:
 
 ```env
-NEXT_PUBLIC_VERCEL_ANALYTICS_ID=seu-id-aqui
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
 ```
-
-### PWA
-
-Os ícones do PWA estão localizados em `/public`. Para personalizar:
-
-1. Substitua os arquivos:
-   - `icon-192x192.png`
-   - `icon-512x512.png`
-2. Atualize o `manifest.ts` conforme necessário
 
 ## 📝 Personalização
 
@@ -84,7 +65,6 @@ export const messages: Message[] = [
     backgroundColor: "#4ade80",
     textColor: "#022c22"
   },
-  // ...
 ];
 ```
 
