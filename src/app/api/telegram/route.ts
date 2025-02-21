@@ -8,7 +8,6 @@ export const runtime = 'edge';
 
 export async function GET() {
   try {
-    // Obter mensagens disponíveis
     const availableMessages = [...messages];
     const { isSpecial, specialMessage } = isSpecialDate();
     
@@ -16,31 +15,26 @@ export async function GET() {
       availableMessages.push(specialMessage);
     }
 
-    // Selecionar mensagem aleatória
     const randomIndex = Math.floor(Math.random() * availableMessages.length);
     const message = availableMessages[randomIndex];
 
-    // Criar emoji baseado no tipo da mensagem
-    const statusEmoji = {
-      positive: '✅',
-      negative: '❌',
-      warning: '⚠️'
+    // Status mais limpo por tipo
+    const statusStyle = {
+      positive: '🟢',
+      negative: '🔴',
+      warning: '🟡'
     };
 
-    // Formatar mensagem para o Telegram
-    // O Telegram suporta HTML básico na mensagem
-    const formattedMessage = `
-<b>Devo Codar Hoje?</b> 🤔
+    // Formatação limpa usando Markdown V2
+    const formattedMessage = `🤔 *Devo Codar Hoje?*
 
 ${message.emoji} ${message.text}
 
-${statusEmoji[message.type as 'positive' | 'negative' | 'warning']} <i>Status: ${message.type}</i>
-    `.trim();
+${statusStyle[message.type as 'positive' | 'negative' | 'warning']} _Status do dia_`;
 
-    // Retornar resposta formatada
     return NextResponse.json({
       text: formattedMessage,
-      parse_mode: 'HTML'
+      parse_mode: 'Markdown'
     }, {
       status: 200,
       headers: {
@@ -56,4 +50,3 @@ ${statusEmoji[message.type as 'positive' | 'negative' | 'warning']} <i>Status: $
     );
   }
 }
-

@@ -2,7 +2,9 @@
 'use client';
 
 import React from 'react';
-import { Github, Bot } from 'lucide-react';
+import { Bot } from 'lucide-react';
+import { PiTelegramLogoLight, PiGithubLogo } from "react-icons/pi";
+
 
 const Footer: React.FC = () => {
   return (
@@ -14,7 +16,7 @@ const Footer: React.FC = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
         >
-          <Github size={18} />
+          <PiGithubLogo size={18} />
           <span className="text-sm">GitHub</span>
         </a>
 
@@ -28,6 +30,18 @@ const Footer: React.FC = () => {
         >
           <Bot size={18} />
           <span className="text-sm">Slack API</span>
+        </a>
+
+        <span className="opacity-40">•</span>
+
+        <a
+          href="https://dev-funny.jeffersonbrandao.com.br/api/telegram"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
+        >
+          <PiTelegramLogoLight size={18} />
+          <span className="text-sm">Telegram API</span>
         </a>
       </div>
     </footer>
